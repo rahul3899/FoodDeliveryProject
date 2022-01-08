@@ -1,0 +1,27 @@
+
+
+
+
+spring:
+ cloud:
+  gateway:
+    routes:
+        - id: ServiceA
+          uri: lb://ORDER-SERVICE
+          predicates:
+           - Path=/orders/**
+        - id: ServiceB
+          uri: lb://MENU-SERVICE
+          predicates:
+           - Path=/menus/** 
+        - id: ServiceC
+          uri: lb://USER-SERVICE
+          predicates:
+           - Path=/users/**   
+        - id: ServiceD
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+           - Path=/payments/**   
+        
+          
+           
