@@ -7,5 +7,6 @@ import com.menuservice.java.model.HotelMenu;
 
 @Repository
 public interface MenuRepository extends JpaRepository<HotelMenu, Integer>{
+	HotelMenu  findByNameContains(String name);
 
 }
