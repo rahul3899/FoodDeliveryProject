@@ -33,4 +33,10 @@ public class MenuServiceImpl implements MenuService {
 		
 		return menuRepository.findAll();
 	}
+	
+	@Override
+	public Long findByName(String name) {
+		HotelMenu hotelMenu=menuRepository.findByNameContains(name);
+		return hotelMenu.getPrice();
+	}
 }
