@@ -65,6 +65,12 @@ public class MenuController {
 	
 
 
-
+	@GetMapping("/menusByName")
+	public ResponseEntity<Long> getMenuPrice(@Param("name") String name){
+		Long response=menuservice.findByName(name);
+		logger.info("Showing Amount for particular Item");
+		return new ResponseEntity<Long>(response,HttpStatus.OK);
+		
+	}
 
 }
