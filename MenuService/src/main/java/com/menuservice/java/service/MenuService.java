@@ -9,5 +9,7 @@ public interface MenuService {
 	Long getAmount(Integer id);
 
 	List<HotelMenu> findall();
+	
+	Long findByName(String name);
 
 }
